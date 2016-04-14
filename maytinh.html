@@ -1,0 +1,60 @@
+<DOCTYPE <!DOCTYPE html>
+<html>
+	<head>
+		
+
+		<title>Máy Tính Bỏ Túi</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/style-maytinh.css">
+	</head>
+	<body>
+	    <script language="javascript">
+	      function ketqua(){
+	        var tong = pheptinh();
+	        if (!isNaN(tong)){
+	          result.value = tong;
+	        }
+	      }
+	      function pheptinh()
+	      {
+	        var a = document.getElementById("a").value;
+	        var b = document.getElementById("b").value;
+	        var result = document.getElementById("result");
+	        var x = parseInt(a);
+	        var y = parseInt(b);
+	    var laydulieuSelect = document.getElementById("chon");
+	    var selectedValue = laydulieuSelect.options[laydulieuSelect.selectedIndex].value;
+	        var tong;
+	        switch (selectedValue){
+	          case '+':
+	            tong = x + y;
+	            break;
+	          case '-':
+	            tong = x - y;
+	            break;
+	          case '*':
+	            tong = x * y;
+	            break;
+	          case '/':
+	            tong = x / y;
+	            break;
+	        }
+	        return tong;
+	      }
+	    </script>
+	    <h1>Máy Tính</h1>
+
+ 		<div class="maytinh">
+ 			<input type="text" id = "a">
+			<select name="maytinh" id="chon" name ="chonlua" onclick ="pheptinh()">
+				<option value ="+">+</option>
+				<option value ="-">-</option>
+				<option value ="*">*</option>
+				<option value ="/">/</option>
+			</select>
+			<input type="text" id="b">
+			<input type="button" id = "btn-kq" value=" = " onclick="ketqua()">
+    		<input type="text" id = "result" onclick="tinh()">
+ 		</div>
+  	</body>
+</html>
